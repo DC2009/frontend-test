@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+#main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  flex: 1;
+  background-color: pink;
+  min-height: calc(100vh - #{$header_height});
+}
