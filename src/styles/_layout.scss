@@ -12,4 +12,9 @@ body {
   min-height: calc(100vh - #{$header_height});
   background-color: lime;
 }
+
+a{
+  text-decoration: none;
+  font-size: 14px;
+  color: #4C6C83;
 }
