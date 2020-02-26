@@ -7,9 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ListComponent } from './list/list.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, SidebarComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, SidebarComponent, ListComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
