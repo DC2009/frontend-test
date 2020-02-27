@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Item } from '../item';
 import { DataService } from 'src/app/data.service';
-import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -11,18 +10,23 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
-  item$: Observable<Item>;
+  item: Item;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private service: DataService
+    private dataService: DataService
   ) {}
 
   ngOnInit() {
-    this.item$ = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) =>
-        this.service.getItemDetails(params.get('id')))
-    );
+    this.route.paramMap.pipe(
+      switchMap(params => {
+        return this.dataService.getItemDetails(params.get('id'));
+      })
+    ).subscribe(i => this.item = i);
+  }
+
+  gotoList() {
+    this.router.navigate(['items']);
   }
 }
