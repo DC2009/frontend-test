@@ -13,7 +13,6 @@ export class ItemComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log(this.item);
   }
 
   gotoDetails(item: Item) {
