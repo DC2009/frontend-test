@@ -9,9 +9,10 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './list/item/item.component';
+import { LevelComponent } from './list/level/level.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, SidebarComponent, ListComponent, ItemComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, SidebarComponent, ListComponent, ItemComponent, LevelComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]

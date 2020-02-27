@@ -1,0 +1,6 @@
+<div class="list-level">
+  <div *ngFor="let item of items">
+    <app-item [item]="item"></app-item>
+    <app-level *ngIf="item.children" [items]="item.children"></app-level>
+  </div>
+</div>
