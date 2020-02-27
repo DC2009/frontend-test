@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Item } from './item/item';
 
-function dataArrayToTree(data: any[]) {
+function dataArrayToTree(data: Item[]) {
   const itemsMap = {};
   const list = data.map(i => ({
     ...i,
@@ -39,7 +39,7 @@ export class ListComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getItems().subscribe((data: any[]) => {
+    this.dataService.getItems().subscribe((data: Item[]) => {
       this.items = dataArrayToTree(data);
     });
   }

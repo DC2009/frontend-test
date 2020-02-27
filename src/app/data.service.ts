@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Item } from './list/item/item';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +12,11 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getItems() {
-    return this.httpClient.get(this.REST_API_SERVER);
+  public getItems(): Observable<Item[]> {
+    return this.httpClient.get<Item[]>(this.REST_API_SERVER);
   }
 
-  public getItemDetails(id: string): Observable<any> {
-    return this.httpClient.get(`${this.REST_API_SERVER}/${id}`);
+  public getItemDetails(id: string): Observable<Item> {
+    return this.httpClient.get<Item>(`${this.REST_API_SERVER}/${id}`);
   }
 }
