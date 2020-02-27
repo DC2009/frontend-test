@@ -1,5 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Item } from './item/item';
+
+function dataArrayToTree(data: any[]) {
+  const itemsMap = {};
+  const list = data.map(i => ({
+    ...i,
+    children: []
+  }));
+
+  for (let i = 0; i < list.length; i ++) {
+      itemsMap[list[i].id] = i;
+  }
+
+  const roots: Item[] = [];
+
+  for (const item of list) {
+      if (item.parent_id) {
+          list[itemsMap[item.parent_id]].children.push(item);
+      } else {
+          roots.push(item);
+      }
+  }
+
+  return roots;
+}
+
 
 @Component({
   selector: 'app-list',
@@ -8,9 +34,14 @@ import { DataService } from '../data.service';
 })
 export class ListComponent implements OnInit {
 
+  items: Item[] = [];
+
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.sendGetRequest().subscribe((data: any[]) => {
+      this.items = dataArrayToTree(data);
+    });
   }
 
 }
