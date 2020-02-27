@@ -9,6 +9,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './list/item/item.component';
 import { LevelComponent } from './list/level/level.component';
+import { DetailsComponent } from './list/item/details/details.component';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, SidebarComponent, ListComponent, ItemComponent, LevelComponent, DetailsComponent],

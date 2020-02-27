@@ -39,7 +39,7 @@ export class ListComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.sendGetRequest().subscribe((data: any[]) => {
+    this.dataService.getItems().subscribe((data: any[]) => {
       this.items = dataArrayToTree(data);
     });
   }
