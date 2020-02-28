@@ -1,5 +1,17 @@
 # Cobiro frontend test
 
+## Solution notes
+First of all, I am new to Angular. I just made a small test app a few days ago in order to get an idea before trying this test.
+
+Probably the solution is not an optimal Angular way of doing things, but it works.
+
+Making the items searchable is open to several possibilities. I chose to highlight the item that has the same title (just type in the whole title, case insensitive). The submit button is there but not used.
+
+The tree-building function is supposed to receive a correct array, where all the items have null or an existing item as parent.
+
+I didn't make any tests
+
+
 ## Pre requisits
 - Node v12.x
 
