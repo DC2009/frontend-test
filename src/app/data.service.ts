@@ -28,7 +28,7 @@ export class DataService {
     return this.selectedItem.asObservable();
   }
 
-  public setSelectedItem(newItem) {
+  public setSelectedItem(newItem: Item) {
     this.selectedItem.next(newItem);
   }
 }
