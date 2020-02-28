@@ -3,12 +3,20 @@
 #main-container {
   display: flex;
   flex-direction: row;
+  min-height: calc(100vh - #{$header_height});
 }
 
 main {
   display: flex;
   flex-direction: column;
   flex: 1;
+  margin-left: $sidebar-width;
+  overflow: hidden;
   background-color: #F4F9FC;
-  min-height: calc(100vh - #{$header_height});
+}
+
+@media (max-width: 600px) {
+  main {
+    margin-left: 0;
+  }
 }

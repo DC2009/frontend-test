@@ -10,9 +10,11 @@
   border: 1px solid #E5E9ED;
   border-radius: 5px;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 31px;
-  color: #00124F;
+  h3 {
+    font-size: 24px;
+    line-height: 31px;
+    color: #00124F;
+  }
 }
 
 .item-btn {
@@ -27,4 +29,21 @@
   padding: 12px 37px;
   margin-left: 8px;
   cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .item {
+    height: 60px;
+    padding: 0 10px;
+    h3 {
+      font-size: 14px;
+      line-height: 18px;
+    }  
+  }
+
+  .item-btn {
+    font-size: 10px;
+    line-height: 12px;
+    padding: 8px 16px;
+  }
 }

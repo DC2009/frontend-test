@@ -2,14 +2,16 @@
 
 nav {
   display: flex;
-  position: sticky;
+  position: fixed;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
   top: $header-height;
   left: 0;
-  width: 240px;
+  width: $sidebar_width;
   height: calc(100vh - #{$header_height});
+  background-color: white;
+  transition: 0.5s;
 }
 
 #ad-container {
@@ -39,5 +41,92 @@ nav {
     display: flex;
     align-items: center;
     padding-left: 40px;
+  }
+}
+
+#menu-toggler {
+  display: none;
+  position: fixed;
+  top: 18px;
+  left: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#menu-toggler input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menu-toggler span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menu-toggler span:first-of-type
+{
+  transform-origin: 0% 0%;
+}
+
+#menu-toggler span:last-child
+{
+  transform-origin: 0% 100%;
+}
+
+#menu-toggler input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(1px, -1px);
+  background: #ababab;
+}
+
+#menu-toggler input:checked ~ span:nth-of-type(2)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menu-toggler input:checked ~ span:last-of-type
+{
+  transform: rotate(-45deg) translate(-1px, 4px);
+}
+
+@media (max-width: 600px) {
+  nav {
+    position: absolute;
+    margin-left: -240px;
+    z-index: 10;
+  }
+  .show {
+    margin-left: 0;
+  }
+  #menu-toggler {
+    display: block;
   }
 }

@@ -1,4 +1,10 @@
-<nav>
+<nav [ngClass]="{'show': show}">
+  <div id='menu-toggler' (click)="menuToggle()">
+    <input type="checkbox" />
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   <div id='ad-container'>
     <img src="../../assets/images/nicebeauty.com_eu_.png" alt="ad image">
     <a href='#'>hairstylist.com</a>

@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+  show: boolean;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  menuToggle() {
+    console.log('toggle');
+    this.show = !this.show;
+  }
 }
