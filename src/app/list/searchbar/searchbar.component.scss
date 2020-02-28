@@ -1,0 +1,54 @@
+#searchbar {
+  margin: 20px 0 20px 20px;
+}
+
+#form-search {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  border: 1px solid #E5E9ED;
+  border-radius: 5px;
+  height: 40px;
+  input[type="text"]{
+    padding: 0 20px;
+  }
+  > input:first-of-type {
+    border-radius: 5px 0 0 5px;
+    flex: 1;
+  }
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+::placeholder {
+  color:#4C6C83;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+.icon-input-btn {
+  display: inline-block;
+  position: relative;
+}
+
+.icon-input-btn input[type="submit"]{
+  background-color: white;
+  width: 56px;
+  height: 100%;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.icon-input-btn #icon-search {
+  display: inline-block;
+  position: absolute;
+  pointer-events: none;
+  left: 20px;
+  top: 30%;
+  background: url('../../../assets/images/Path3560.svg');
+  width: 16px;
+  height: 16px;
+}

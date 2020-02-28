@@ -10,9 +10,19 @@ import { ListComponent } from './list/list.component';
 import { ItemComponent } from './list/item/item.component';
 import { LevelComponent } from './list/level/level.component';
 import { DetailsComponent } from './list/item/details/details.component';
+import { SearchbarComponent } from './list/searchbar/searchbar.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, SidebarComponent, ListComponent, ItemComponent, LevelComponent, DetailsComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    SidebarComponent,
+    ListComponent,
+    ItemComponent,
+    LevelComponent,
+    DetailsComponent,
+    SearchbarComponent
+  ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
