@@ -20,12 +20,10 @@ export class SearchbarComponent implements OnInit {
   }
 
   filterItems(input: string) {
-    console.log(input);
     this.dataService.setSelectedItem(input
       ? this.dataService.items.find(i => i.title.toLowerCase() === input.toLowerCase())
       : null
     );
-    console.log(this.dataService.getSelectedItem());
   }
 
 }

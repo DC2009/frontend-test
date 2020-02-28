@@ -14,7 +14,6 @@ export class SidebarComponent implements OnInit {
   }
 
   menuToggle() {
-    console.log('toggle');
     this.show = !this.show;
   }
 }

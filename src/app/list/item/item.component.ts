@@ -18,7 +18,6 @@ export class ItemComponent implements OnInit {
   ngOnInit() {
     this.dataService.getSelectedItem().subscribe(item => {
       this.selected = item && item.id === this.item.id;
-      console.log('selected', this.selected, this.item.id);
     });
   }
 
