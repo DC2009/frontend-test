@@ -1,4 +1,4 @@
-<div class="item">
+<div class= "item" [ngClass]="{'item-highlight': selected}">
   <h3>{{item.title}}</h3>
-  <button class="item-btn" (click)="gotoDetails(item)">Button</button>
+  <button class="item-btn" (click)="gotoDetails()">Button</button>
 </div>

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Item } from './item';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-item',
@@ -10,12 +11,18 @@ import { Item } from './item';
 export class ItemComponent implements OnInit {
   @Input() item: Item;
 
-  constructor(private router: Router) { }
+  selected = false;
+
+  constructor(private router: Router, private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getSelectedItem().subscribe(item => {
+      this.selected = item && item.id === this.item.id;
+      console.log('selected', this.selected, this.item.id);
+    });
   }
 
-  gotoDetails(item: Item) {
+  gotoDetails() {
     this.router.navigate(['items', this.item.id]);
   }
 

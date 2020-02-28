@@ -1,7 +1,7 @@
 <div id="searchbar">
   <form id="form-search">
     <label class="visually-hidden" for="search">search</label><br>
-    <input placeholder="Search" type="text" id="search" name="search" value="">
+    <input placeholder="Search" type="text" id="search" name="search" [formControl]="searchControl">
     <div class="icon-input-btn">
       <div id="icon-search"></div>
       <input type="submit" value="">

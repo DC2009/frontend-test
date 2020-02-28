@@ -41,6 +41,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.dataService.getItems().subscribe((data: Item[]) => {
       this.items = dataArrayToTree(data);
+      this.dataService.items = data;
     });
   }
 

@@ -11,6 +11,7 @@ import { ItemComponent } from './list/item/item.component';
 import { LevelComponent } from './list/level/level.component';
 import { DetailsComponent } from './list/item/details/details.component';
 import { SearchbarComponent } from './list/searchbar/searchbar.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,13 @@ import { SearchbarComponent } from './list/searchbar/searchbar.component';
     DetailsComponent,
     SearchbarComponent
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
